@@ -1,12 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import getDataFromApi from "../services/getDataFromApi.js";
 // import { Link, Route, Switch } from 'react-router-dom';
-// import data from '../data/data.json';
+
 
 const App = () => {
+    const [characters, setCharacters] = useState([]);
+    useEffect(() => {
+        getDataFromApi().then(data => setCharacters(data));
+    }, []);
+    console.log(characters);
+
     return (
-        <div className="App">
-            Hola Mundo
-        </div>
+        <>
+            <div className="App">
+                Hola Mundo
+            </div>
+        </>
     );
 }
 
