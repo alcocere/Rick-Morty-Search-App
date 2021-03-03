@@ -14,6 +14,7 @@ const CharacterDetail = (props) => {
                     />
                 </div>
                 <h2>{props.character.name}</h2>
+                <Link to="/"> <span className="modal__close icon fas fa-times"></span></Link>
                 <p><strong>Status:</strong>{props.character.status}</p>
                 <p><strong>Species:</strong>{props.character.species}</p>
                 <p><strong>Origin:</strong>{props.character.origin.name}</p>

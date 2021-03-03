@@ -59,12 +59,14 @@ const App = () => {
     return (
         <>
             <div className="App">
-                <Header />
-                <main className="main">
-                    <Filters handleFilter={handleFilter} />
-                    <CharacterList characters={filteredCharacters} />
-                </main>
                 <Switch>
+                    <Route exact path="/">
+                        <Header />
+                        <main className="main">
+                            <Filters handleFilter={handleFilter} />
+                            <CharacterList characters={filteredCharacters} />
+                        </main>
+                    </Route>
                     <Route path="/character/:id" render={renderCharacterDetail} />
                 </Switch>
             </div>
