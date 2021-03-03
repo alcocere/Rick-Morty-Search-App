@@ -3,7 +3,8 @@ import getDataFromApi from "../services/getDataFromApi.js";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 import Header from "./Header";
-// import { Link, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import CharacterDetail from './CharacterDetail.js';
 
 
 const App = () => {
@@ -31,7 +32,7 @@ const App = () => {
             return character.name.toUpperCase().includes(nameFilter.toUpperCase());
         })
         .filter(character => {
-            console.log(character.species, specieFilter);
+            // console.log(character.species, specieFilter);
             if (specieFilter === 'all') {
                 return true;
             } else {
@@ -42,6 +43,19 @@ const App = () => {
     // console.log('name', nameFilter);
     // console.log('specie', specieFilter);
 
+
+    // Render character detail 
+    const renderCharacterDetail = (props) => {
+        const foundCharacter = characters.find((character) => {
+            return character.id === parseInt(props.match.params.id);
+        });
+        if (foundCharacter !== undefined) {
+            return (
+                <CharacterDetail character={foundCharacter} />
+            )
+        }
+    };
+
     return (
         <>
             <div className="App">
@@ -49,11 +63,13 @@ const App = () => {
                 <main className="main">
                     <Filters handleFilter={handleFilter} />
                     <CharacterList characters={filteredCharacters} />
-
                 </main>
+                <Switch>
+                    <Route path="/character/:id" render={renderCharacterDetail} />
+                </Switch>
             </div>
         </>
     );
-}
+};
 
 export default App;
