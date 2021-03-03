@@ -28,8 +28,15 @@ const App = () => {
     const filteredCharacters = characters
         .filter(character => {
             return character.name.toUpperCase().includes(nameFilter.toUpperCase());
+        })
+        .filter(character => {
+            // console.log(character.species, specieFilter);
+            if (specieFilter === 'all') {
+                return true;
+            } else {
+                return character.species.toUpperCase === specieFilter;
+            }
         });
-
 
     // console.log('name', nameFilter);
     // console.log('specie', specieFilter);

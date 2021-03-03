@@ -13,8 +13,8 @@ const FilterBySpecie = props => {
         <fieldset>
             <label htmlFor="specie" className="form-section__label">Species</label>
             <select
-                id="specie"
-                name="specie"
+                id="species"
+                name="species"
                 onChange={handleChange}
                 className="form-section__select"
             >
