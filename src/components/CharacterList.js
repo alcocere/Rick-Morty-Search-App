@@ -10,7 +10,7 @@ const CharacterList = props => {
         );
     }
     );
-    // console.log(character);
+
     return (
         <section className="cards-section">
             <ul className="cards-container">{character}</ul>
