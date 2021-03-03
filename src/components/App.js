@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import getDataFromApi from "../services/getDataFromApi.js";
+import CharacterList from "./CharacterList";
 // import { Link, Route, Switch } from 'react-router-dom';
 
 
@@ -13,7 +14,7 @@ const App = () => {
     return (
         <>
             <div className="App">
-                Hola Mundo
+                <CharacterList characters={characters} />
             </div>
         </>
     );
