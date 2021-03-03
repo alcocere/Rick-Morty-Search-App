@@ -7,6 +7,8 @@ import Filters from "./Filters";
 
 const App = () => {
     const [characters, setCharacters] = useState([]);
+    const [nameFilter, setNameFilter] = useState('');
+    const [specieFilter, setSpecieFilter] = useState('all');
 
 
     useEffect(() => {
@@ -15,8 +17,16 @@ const App = () => {
 
     //event handlers
     const handleFilter = data => {
-        console.log("manejando los filtros", data);
+        // console.log("manejando los filtros", data);
+        if (data.key === 'name') {
+            setNameFilter(data.value);
+        } else if (data.key === 'specie') {
+            setSpecieFilter(data.value)
+        }
     };
+
+    console.log('name', nameFilter);
+    console.log('specie', specieFilter);
 
     return (
         <>
