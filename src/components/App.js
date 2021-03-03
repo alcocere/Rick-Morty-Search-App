@@ -25,14 +25,20 @@ const App = () => {
         }
     };
 
-    console.log('name', nameFilter);
-    console.log('specie', specieFilter);
+    const filteredCharacters = characters
+        .filter(character => {
+            return character.name.toUpperCase().includes(nameFilter.toUpperCase());
+        });
+
+
+    // console.log('name', nameFilter);
+    // console.log('specie', specieFilter);
 
     return (
         <>
             <div className="App">
                 <Filters handleFilter={handleFilter} />
-                <CharacterList characters={characters} />
+                <CharacterList characters={filteredCharacters} />
             </div>
         </>
     );

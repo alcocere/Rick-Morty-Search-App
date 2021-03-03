@@ -12,7 +12,12 @@ const FilterBySpecie = props => {
     return (
         <fieldset>
             <label htmlFor="specie" className="form-section__label">Species</label>
-            <select id="specie" name="specie" onChange={handleChange} className="form-section__select">
+            <select
+                id="specie"
+                name="specie"
+                onChange={handleChange}
+                className="form-section__select"
+            >
                 <option value="all" className="form-section__option">All</option>
                 <option value="human" className="form-section__option">Human</option>
                 <option value="alien" className="form-section__option">Alien</option>
