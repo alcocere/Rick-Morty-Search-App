@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import getDataFromApi from "../services/getDataFromApi.js";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
+import Header from "./Header";
 // import { Link, Route, Switch } from 'react-router-dom';
 
 
@@ -44,8 +45,11 @@ const App = () => {
     return (
         <>
             <div className="App">
-                <Filters handleFilter={handleFilter} />
-                <CharacterList characters={filteredCharacters} />
+                <Header />
+                <main className="main">
+                    <Filters handleFilter={handleFilter} />
+                    <CharacterList characters={filteredCharacters} />
+                </main>
             </div>
         </>
     );

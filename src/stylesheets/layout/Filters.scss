@@ -1,0 +1,89 @@
+@import "../core/variables.scss";
+
+.form-section {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__container {
+		width: 100%;
+		border: none;
+		margin-bottom: 10px;
+
+		@media all and (min-width: 1200px) {
+			padding-bottom: 10px;
+		}
+
+		@media all and (min-width: 1200px) {
+			width: 250px;
+			display: inline-block;
+			max-width: 1200px;
+		}
+	}
+	&__label {
+		display: inline-block;
+		color: $color-light;
+		margin-top: 20px;
+		margin-bottom: 5px;
+		font-size: 30px;
+	}
+	&__input {
+		display: block;
+		width: 320px;
+		height: 35px;
+		background-color: $color-secondary;
+		border: 2px solid $color-secondary;
+		border-radius: 3px;
+		font-size: 1rem;
+		padding: 0 10px;
+		color: $color-light;
+		box-shadow: 2px 1px 2px $color-secondary;
+
+		@media all and (min-width: 768px) {
+			width: 450px;
+		}
+
+		@media all and (min-width: 1200px) {
+			width: 250px;
+			display: inline-block;
+			margin-right: 15px;
+		}
+		&:focus {
+			outline: 1px solid $color-light;
+			border-radius: 22px;
+		}
+		&::placeholder {
+			color: $color-light;
+		}
+	}
+
+	&__select {
+		width: 320px;
+		display: block;
+		height: 35px;
+		margin-bottom: 8px;
+		font-size: 1rem;
+		background-color: transparent;
+		color: $color-light;
+		border: 2px solid $color-secondary;
+		border-radius: 3px;
+		padding: 3px;
+		box-shadow: 2px 1px 2px $color-secondary;
+		cursor: pointer;
+
+		@media all and (min-width: 768px) {
+			width: 450px;
+		}
+
+		@media all and (min-width: 1200px) {
+			width: 250px;
+			display: inline-block;
+			margin-right: 15px;
+		}
+
+		&:focus {
+			border: 2px solid $color-light;
+		}
+	}
+}

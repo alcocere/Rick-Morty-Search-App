@@ -1,0 +1,13 @@
+.header {
+	text-align: center;
+	margin-top: 30px;
+
+	&__image {
+		height: 150px;
+		width: auto;
+
+		@media all and (min-width: 768px) {
+			height: 270px;
+		}
+	}
+}

@@ -1,6 +1,31 @@
+@import "core/variables";
+@import "core/reset";
+
 .App {
+	height: 100vh;
 	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
+	flex-direction: column;
 	align-items: center;
+	background-position: center;
+	color: $color-font-main;
+
+	@media all and (min-width: 768) {
+		height: 100vh;
+	}
+}
+
+html {
+	background-image: url(../images/rick_and_morty-2_wallPaper.jpg);
+	background-position-x: -50vw;
+	background-position-y: bottom;
+	background-repeat: repeat;
+}
+
+.main {
+	@media all and (min-width: 768) {
+		width: 700px;
+	}
+	@media all and (min-width: 1200) {
+		width: 1190px;
+	}
 }
