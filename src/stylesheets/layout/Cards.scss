@@ -1,0 +1,20 @@
+@import "../core/variables.scss";
+
+.card {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	padding: 0 20px 20px;
+}
+
+.cards-container {
+	margin-top: 60px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: space-around;
+	@media (min-width: 500px) {
+		max-width: 900px;
+		justify-content: center;
+	}
+}

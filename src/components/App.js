@@ -31,11 +31,11 @@ const App = () => {
             return character.name.toUpperCase().includes(nameFilter.toUpperCase());
         })
         .filter(character => {
-            // console.log(character.species, specieFilter);
+            console.log(character.species, specieFilter);
             if (specieFilter === 'all') {
                 return true;
             } else {
-                return character.species.toUpperCase === specieFilter;
+                return character.species === specieFilter;
             }
         });
 
@@ -49,6 +49,7 @@ const App = () => {
                 <main className="main">
                     <Filters handleFilter={handleFilter} />
                     <CharacterList characters={filteredCharacters} />
+
                 </main>
             </div>
         </>
