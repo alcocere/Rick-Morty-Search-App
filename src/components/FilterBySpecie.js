@@ -1,9 +1,7 @@
 import React from 'react';
 
 const FilterBySpecie = props => {
-    // console.log(props);
     const handleChange = (ev) => {
-        // console.log(ev.type,);
         props.handleFilter({
             value: ev.target.value,
             key: 'specie'

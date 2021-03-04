@@ -17,7 +17,7 @@ const App = () => {
         getDataFromApi().then(data => setCharacters(data));
     }, []);
 
-    //event handlers
+    //EVENT HANDLERS
     const handleFilter = data => {
         if (data.key === 'name') {
             setNameFilter(data.value);
@@ -31,7 +31,6 @@ const App = () => {
             return character.name.toUpperCase().includes(nameFilter.toUpperCase());
         })
         .filter(character => {
-            console.log(character.species, specieFilter);
             if (specieFilter === 'All') {
                 return true;
             } else {
@@ -39,11 +38,7 @@ const App = () => {
             }
         });
 
-    console.log('name', nameFilter);
-    console.log('specie', specieFilter);
-
-
-    // Render character detail 
+    //RENDER CHARACTER DETAIL
     const renderCharacterDetail = (props) => {
         const foundCharacter = characters.find((character) => {
             return character.id === parseInt(props.match.params.id);
