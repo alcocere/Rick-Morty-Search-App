@@ -31,7 +31,7 @@
 	&__input {
 		display: block;
 		margin-bottom: 8px;
-		width: 320px;
+		width: 290px;
 		height: 35px;
 		background-color: $color-secondary;
 		border: 2px solid $color-secondary;
@@ -46,9 +46,9 @@
 		}
 
 		@media all and (min-width: 1200px) {
-			width: 250px;
+			width: 350px;
 			display: inline-block;
-			margin-right: 15px;
+			margin-right: 25px;
 		}
 		&:focus {
 			outline: 1px solid $color-light;
@@ -60,7 +60,7 @@
 	}
 
 	&__select {
-		width: 320px;
+		width: 290px;
 		display: block;
 		height: 35px;
 		margin-bottom: 8px;
@@ -78,7 +78,7 @@
 		}
 
 		@media all and (min-width: 1200px) {
-			width: 250px;
+			width: 350px;
 			display: inline-block;
 			margin-right: 15px;
 		}

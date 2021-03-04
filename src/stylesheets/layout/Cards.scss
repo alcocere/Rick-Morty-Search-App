@@ -5,16 +5,88 @@
 	flex-direction: column;
 	justify-content: flex-start;
 	align-items: center;
-	padding: 0 20px 20px;
+	height: 270px;
+	width: 200px;
+	background-color: rgb(15, 15, 15);
+	margin-bottom: 65px;
+	color: $color-light;
+	border-radius: 15px;
+	box-shadow: 0 14px 39px -12px #000;
+	transition: transform 0.5s linear;
+
+	@media all and (min-width: 500px) {
+		width: 250px;
+		height: 310px;
+	}
+
+	&:hover {
+		background-color: $color-secondary;
+		cursor: pointer;
+		transform: scale(1.1);
+	}
+
+	&__image {
+		width: 170px;
+		border-radius: 100%;
+		transform: translateY(-30px);
+
+		@media all and (min-width: 500px) {
+			height: auto;
+			width: 200px;
+			transform: translateY(-40px);
+			box-shadow: 0 14px 39px -12px #000;
+		}
+	}
+
+	&__name {
+		font-size: 24px;
+		max-width: 150px;
+		text-align: center;
+	}
+
+	&__species {
+		font-size: 1.2rem;
+		color: $color-terciary;
+	}
 }
 
 .cards-container {
+	display: grid;
+	grid-template-columns: 1fr;
 	margin-top: 60px;
-	display: flex;
-	flex-wrap: wrap;
-	align-content: space-around;
+
 	@media (min-width: 500px) {
-		max-width: 900px;
-		justify-content: center;
+		grid-template-columns: repeat(auto-fill, 250px);
+		grid-gap: 20px;
+	}
+	@media all and (min-width: 900px) {
+		max-width: 800px;
+	}
+}
+
+.cards-section {
+	overflow-y: scroll;
+	height: 600px;
+	// height: calc(97vh - 450px);
+	scroll-behavior: smooth;
+	background-color: rgba(0, 0, 0, 0.797);
+	border-radius: 20px;
+	padding: 15px;
+	margin-bottom: 50px;
+	padding-right: 30px;
+	@media (min-width: 768px) {
+		overflow-y: scroll;
+		scroll-behavior: smooth;
+
+		&::-webkit-scrollbar {
+			padding-left: 5px;
+			width: 5px;
+			height: 5px;
+			background: rgb(105, 255, 75);
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background-color: $color-secondary;
+		}
 	}
 }

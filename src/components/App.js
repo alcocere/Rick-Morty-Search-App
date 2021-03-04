@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import getDataFromApi from "../services/getDataFromApi.js";
+import getDataFromApi from "../services/getDataFromApi.js.js";
 import CharacterList from "./CharacterList";
 import Filters from "./Filters";
 import Header from "./Header";
@@ -61,7 +61,7 @@ const App = () => {
         <>
             <div className="App">
                 <Switch>
-                    <Route exact path="/">
+                    <Route exact path="/" >
                         <Header />
                         <main className="main">
                             <Filters handleFilter={handleFilter} />
