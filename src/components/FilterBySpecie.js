@@ -18,10 +18,10 @@ const FilterBySpecie = props => {
                 onChange={handleChange}
                 className="form-section__select"
             >
-                <option value="all" className="form-section__option">All</option>
-                <option value="human" className="form-section__option">Human</option>
-                <option value="alien" className="form-section__option">Alien</option>
-                <option value="unknown" className="form-section__option">Unknown</option>
+                <option value="All" className="form-section__option">All</option>
+                <option value="Human" className="form-section__option">Human</option>
+                <option value="Alien" className="form-section__option">Alien</option>
+                <option value="Unknown" className="form-section__option">Unknown</option>
             </select>
         </fieldset>
     )

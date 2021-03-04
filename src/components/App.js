@@ -19,7 +19,6 @@ const App = () => {
 
     //event handlers
     const handleFilter = data => {
-        // console.log("manejando los filtros", data);
         if (data.key === 'name') {
             setNameFilter(data.value);
         } else if (data.key === 'specie') {
@@ -32,16 +31,16 @@ const App = () => {
             return character.name.toUpperCase().includes(nameFilter.toUpperCase());
         })
         .filter(character => {
-            // console.log(character.species, specieFilter);
-            if (specieFilter === 'all') {
+            console.log(character.species, specieFilter);
+            if (specieFilter === 'All') {
                 return true;
             } else {
                 return character.species === specieFilter;
             }
         });
 
-    // console.log('name', nameFilter);
-    // console.log('specie', specieFilter);
+    console.log('name', nameFilter);
+    console.log('specie', specieFilter);
 
 
     // Render character detail 
@@ -51,7 +50,10 @@ const App = () => {
         });
         if (foundCharacter !== undefined) {
             return (
-                <CharacterDetail character={foundCharacter} />
+                <>
+                    <Header />
+                    <CharacterDetail character={foundCharacter} />
+                </>
             )
         }
     };
