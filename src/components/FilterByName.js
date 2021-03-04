@@ -14,7 +14,7 @@ const FilterByName = props => {
             <input type="text"
                 id="character"
                 name="character"
-                placeholder="Search you favorite character"
+                placeholder="Search your favorite character"
                 className="form-section__input"
                 onChange={handleChange}>
             </input>

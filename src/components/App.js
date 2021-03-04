@@ -49,7 +49,7 @@ const App = () => {
         if (foundCharacter !== undefined) {
             return (
                 <>
-                    <Header />
+                    {/* <Header /> */}
                     <CharacterDetail character={foundCharacter} />
                 </>
 

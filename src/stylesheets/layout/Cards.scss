@@ -53,7 +53,7 @@
 .cards-container {
 	display: grid;
 	grid-template-columns: 1fr;
-	margin-top: 60px;
+	margin-top: 90px;
 
 	@media (min-width: 500px) {
 		grid-template-columns: repeat(auto-fill, 250px);
@@ -66,23 +66,23 @@
 
 .cards-section {
 	overflow-y: scroll;
-	height: 600px;
-	// height: calc(97vh - 450px);
+	height: 610px;
+	margin-top: 60px;
 	scroll-behavior: smooth;
-	background-color: rgba(0, 0, 0, 0.797);
+	background-color: rgb(0, 0, 0);
 	border-radius: 20px;
 	padding: 15px;
-	margin-bottom: 50px;
+	// margin-bottom: 8px;
 	padding-right: 30px;
-	@media (min-width: 768px) {
+	@media (min-width: 600px) {
 		overflow-y: scroll;
 		scroll-behavior: smooth;
 
 		&::-webkit-scrollbar {
 			padding-left: 5px;
 			width: 5px;
-			height: 5px;
-			background: rgb(105, 255, 75);
+			height: 2px;
+			background: $color-green;
 		}
 
 		&::-webkit-scrollbar-thumb {

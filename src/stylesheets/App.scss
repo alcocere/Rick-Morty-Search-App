@@ -2,11 +2,8 @@
 @import "core/reset";
 
 html {
-	background-image: url(../images/rick_and_morty-2_wallPaper.jpg);
-	background-size: cover;
-	// background-position-x: -50vw;
-	// background-position-y: bottom;
-	background-repeat: no-repeat;
+	background: url("../images/rick_and_morty-2_wallPaper.jpg") no-repeat bottom /
+		cover fixed;
 }
 
 main {

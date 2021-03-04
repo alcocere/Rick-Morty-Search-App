@@ -1,0 +1,61 @@
+@import "../core/variables.scss";
+
+.card-detail {
+	margin: 40px auto;
+	padding: 20px;
+	width: 250px;
+	border-radius: 16px;
+	background-color: $color-secondary;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 40px;
+
+	@media all and (min-width: 500px) {
+		width: 300px;
+	}
+
+	&__img {
+		width: 170px;
+		border-radius: 10%;
+
+		@media all and (min-width: 500px) {
+			height: auto;
+			width: 200px;
+			box-shadow: 0 14px 39px -12px #000;
+		}
+	}
+	&__name {
+		color: $color-green;
+		text-align: center;
+		font-size: 27px;
+	}
+	&__info {
+		font-size: 22px;
+		text-align: center;
+		color: $color-green;
+		font-family: $font-secondary;
+		text-decoration: underline;
+	}
+	&__info2 {
+		color: $color-light;
+	}
+}
+
+.modal__close {
+	color: $color-green;
+	border: solid 1px $color-green;
+	border-radius: 50%;
+	padding: 8px;
+	margin-bottom: 10px;
+	&-text {
+		color: $color-green;
+		padding: 10px;
+		font-size: 17px;
+	}
+}
+
+.main-detail {
+	height: 90vh;
+	margin-bottom: 40px;
+}

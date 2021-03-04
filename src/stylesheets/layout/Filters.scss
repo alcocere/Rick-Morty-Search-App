@@ -7,9 +7,7 @@
 	align-items: center;
 
 	&__container {
-		width: 100%;
 		border: none;
-		margin-bottom: 10px;
 
 		@media all and (min-width: 1200px) {
 			padding-bottom: 10px;
@@ -26,7 +24,7 @@
 		color: $color-light;
 		margin-top: 20px;
 		margin-bottom: 5px;
-		font-size: 30px;
+		font-size: 24px;
 	}
 	&__input {
 		display: block;
@@ -70,7 +68,7 @@
 		border: 2px solid $color-secondary;
 		border-radius: 3px;
 		padding: 3px;
-		box-shadow: 2px 1px 2px $color-secondary;
+		box-shadow: 1px 1px $color-secondary;
 		cursor: pointer;
 
 		@media all and (min-width: 768px) {
@@ -84,7 +82,7 @@
 		}
 
 		&:focus {
-			border: 2px solid $color-light;
+			border: 2px solid $color-secondary;
 		}
 	}
 }
