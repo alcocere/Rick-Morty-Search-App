@@ -10,7 +10,7 @@ import CharacterDetail from './CharacterDetail.js';
 const App = () => {
     const [characters, setCharacters] = useState([]);
     const [nameFilter, setNameFilter] = useState('');
-    const [specieFilter, setSpecieFilter] = useState('all');
+    const [specieFilter, setSpecieFilter] = useState('All');
 
 
     useEffect(() => {
@@ -26,6 +26,7 @@ const App = () => {
         }
     };
 
+    //FILTERS
     const filteredCharacters = characters
         .filter(character => {
             return character.name.toUpperCase().includes(nameFilter.toUpperCase());
@@ -38,6 +39,8 @@ const App = () => {
             }
         });
 
+
+
     //RENDER CHARACTER DETAIL
     const renderCharacterDetail = (props) => {
         const foundCharacter = characters.find((character) => {
@@ -49,7 +52,8 @@ const App = () => {
                     <Header />
                     <CharacterDetail character={foundCharacter} />
                 </>
-            )
+
+            );
         }
     };
 

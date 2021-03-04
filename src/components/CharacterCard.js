@@ -6,8 +6,8 @@ const CharacterCard = (props) => {
 
     return (
         <>
-            <article className="card">
-                <Link to={`/character/${props.character.id}`}>
+            <Link to={`/character/${props.character.id}`}>
+                <article className="card">
                     <img
                         src={props.character.image}
                         alt={"Image from " + props.character.name}
@@ -16,8 +16,9 @@ const CharacterCard = (props) => {
                     />
                     <h2 className="card__name">{props.character.name}</h2>
                     <p className="card__species">{props.character.species}</p>
-                </Link>
-            </article>
+
+                </article>
+            </Link>
         </>
     )
 };

@@ -19,7 +19,6 @@ const FilterBySpecie = props => {
                 <option value="All" className="form-section__option">All</option>
                 <option value="Human" className="form-section__option">Human</option>
                 <option value="Alien" className="form-section__option">Alien</option>
-                <option value="Unknown" className="form-section__option">Unknown</option>
             </select>
         </fieldset>
     )
