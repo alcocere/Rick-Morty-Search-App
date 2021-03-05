@@ -89,7 +89,7 @@ const App = () => {
                                 handleReset={handleReset}
                                 nameFilter={nameFilter}
                                 specieFilter={specieFilter} />
-                            <CharacterList characters={filteredCharacters} />
+                            <CharacterList characters={filteredCharacters} filterName={nameFilter} />
                         </main>
                     </Route>
                     <Route path="/character/:id" render={renderCharacterDetail} />

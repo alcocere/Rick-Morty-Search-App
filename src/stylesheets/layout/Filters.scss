@@ -30,8 +30,8 @@
 		margin-bottom: 8px;
 		width: 290px;
 		height: 35px;
-		background-color: $opacityblue;
-		border: 3px solid $color-green;
+		background-color: $blackopacity;
+		border: 3px solid $color-secondary;
 		border-radius: 15px;
 		font-size: 1rem;
 		padding: 0 10px;
@@ -64,12 +64,12 @@
 		height: 35px;
 		margin-bottom: 8px;
 		font-size: 1rem;
-		background-color: $opacityblue;
+		background-color: $blackopacity;
 		color: $color-light;
-		border: 3px solid $color-green;
+		border: 3px solid $color-secondary;
 		border-radius: 15px;
 		padding: 3px;
-		box-shadow: 1px 1px 1px $color-green;
+
 		cursor: pointer;
 
 		@media all and (min-width: 768px) {
@@ -95,7 +95,7 @@
 
 .resetbtn-icon {
 	color: $color-green;
-	font-size: 20px;
+	font-size: 16px;
 	border: 4px solid $color-secondary;
 	border-radius: 50%;
 	padding: 5px;

@@ -13,7 +13,7 @@ const CharacterList = props => {
     });
     const notFound = () => {
         if (character.length === 0) {
-            return <CharacterNotFound nameFilter={props.nameFilter} />
+            return <CharacterNotFound nameFilter={props.filterName} />
         }
     };
 

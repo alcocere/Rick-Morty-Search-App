@@ -74,23 +74,24 @@
 	height: 610px;
 	margin-top: 60px;
 	scroll-behavior: smooth;
-	background-color: rgb(12, 12, 12);
+	background-color: rgba(0, 0, 0, 0.81);
 	border-radius: 20px;
-	padding: 15px;
+	padding: 30px 60px 30px;
 	// box-shadow: 0 4px 90px -10px #69ff4b;
 	@media (min-width: 600px) {
 		overflow-y: scroll;
 		scroll-behavior: smooth;
+		padding: 30px 100px 30px;
 
 		&::-webkit-scrollbar {
 			padding-left: 5px;
 			width: 4px;
 			height: 1px;
-			background: $color-green;
+			background: $blackopacity;
 		}
 
 		&::-webkit-scrollbar-thumb {
-			background-color: $blackopacity;
+			background-color: $color-secondary;
 		}
 	}
 }

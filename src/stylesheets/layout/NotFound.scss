@@ -12,6 +12,13 @@
 		@media all and (min-width: 600px) {
 			font-size: 30px;
 		}
+		&--search {
+			color: $color-secondary;
+			font-size: 27px;
+			@media all and (min-width: 600px) {
+				font-size: 30px;
+			}
+		}
 	}
 	&__subtext {
 		font-size: 24px;
