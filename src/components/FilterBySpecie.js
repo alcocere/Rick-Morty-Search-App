@@ -15,6 +15,7 @@ const FilterBySpecie = props => {
                 name="specie"
                 onChange={handleChange}
                 className="form-section__select"
+                value={props.specieFilter}
             >
                 <option value="All" className="form-section__option">All</option>
                 <option value="Human" className="form-section__option">Human</option>

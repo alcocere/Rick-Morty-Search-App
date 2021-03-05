@@ -8,6 +8,10 @@ const FilterByName = props => {
         });
     };
 
+    const handleReset = () => {
+        props.handleReset();
+    };
+
     return (
         <fieldset className="form-section__container">
             <label htmlFor="character" className="form-section__label">Name</label>
@@ -16,8 +20,10 @@ const FilterByName = props => {
                 name="character"
                 placeholder="Search your favorite character"
                 className="form-section__input"
-                onChange={handleChange}>
+                onChange={handleChange}
+                value={props.nameFilter}>
             </input>
+            <span className="reset-btn fas fa-sync-alt" onClick={handleReset}></span>
         </fieldset>
     );
 };

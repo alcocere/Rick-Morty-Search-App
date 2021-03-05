@@ -26,6 +26,15 @@ const App = () => {
         }
     };
 
+    //RESET
+    const handleReset = () => {
+        console.log('cliclic');
+        setCharacters(characters);
+        setNameFilter('');
+        setSpecieFilter('All');
+
+    }
+
     //FILTERS
     const filteredCharacters = characters
         .filter(character => {
@@ -54,6 +63,8 @@ const App = () => {
                 </>
 
             );
+        } else {
+            return <p> Oooops 😵 sorry, there is no character in this universe that matches with your search! 🛸 </p>;
         }
     };
 
@@ -64,7 +75,10 @@ const App = () => {
                     <Route exact path="/" >
                         <Header />
                         <main className="main">
-                            <Filters handleFilter={handleFilter} />
+                            <Filters handleFilter={handleFilter}
+                                handleReset={handleReset}
+                                nameFilter={nameFilter}
+                                specieFilter={specieFilter} />
                             <CharacterList characters={filteredCharacters} />
                         </main>
                     </Route>
