@@ -30,23 +30,25 @@
 		width: 170px;
 		border-radius: 100%;
 		transform: translateY(-30px);
-		box-shadow: 0 4px 50px -10px #69ff4b;
+		box-shadow: 0 8px 40px -20px #69ff4b;
 
 		@media all and (min-width: 500px) {
 			height: auto;
 			width: 200px;
 			transform: translateY(-40px);
-			// box-shadow: 0 14px 39px -12px #000;
-			box-shadow: 0 8px 50px -10px #69ff4b;
+			//box-shadow: 0 14px 39px -12px #000;
+			box-shadow: 0 8px 40px -20px #69ff4b;
 		}
 	}
 
 	&__name {
-		font-size: 24px;
+		font-size: 18px;
 		max-width: 250px;
 		text-align: center;
+		@media all and (min-width: 500px) {
+			font-size: 24px;
+		}
 	}
-
 	&__species {
 		font-size: 1.2rem;
 		color: $color-terciary;

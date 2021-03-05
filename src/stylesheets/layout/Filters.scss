@@ -5,12 +5,11 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	margin-top: 40px;
 
 	&__container {
 		border: none;
 
-		@media all and (min-width: 1200px) {
+		@media all and (min-width: 768px) {
 			padding-bottom: 10px;
 		}
 
