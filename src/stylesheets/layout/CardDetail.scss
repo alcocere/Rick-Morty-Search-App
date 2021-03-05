@@ -5,7 +5,7 @@
 	padding: 20px;
 	width: 250px;
 	border-radius: 16px;
-	background-color: $color-secondary;
+	background-color: $opacityblue;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -22,7 +22,8 @@
 		@media all and (min-width: 500px) {
 			height: auto;
 			width: 200px;
-			box-shadow: 0 14px 39px -12px #000;
+			// box-shadow: 0 14px 39px -12px #000;
+			box-shadow: 0 12px 50px -10px #69ff4b;
 		}
 	}
 	&__name {
@@ -31,7 +32,7 @@
 		font-size: 27px;
 	}
 	&__info {
-		font-size: 22px;
+		font-size: 24px;
 		text-align: center;
 		color: $color-green;
 		font-family: $font-secondary;
@@ -39,6 +40,12 @@
 	}
 	&__info2 {
 		color: $color-light;
+		& .dead {
+			color: rgb(232, 15, 15);
+		}
+		& .alive {
+			color: $color-green;
+		}
 	}
 }
 

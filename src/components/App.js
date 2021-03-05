@@ -8,6 +8,7 @@ import CharacterDetail from './CharacterDetail.js';
 import PropTypes from 'prop-types';
 
 
+
 const App = () => {
     const [characters, setCharacters] = useState([]);
     const [nameFilter, setNameFilter] = useState('');
@@ -65,7 +66,15 @@ const App = () => {
 
             );
         } else {
-            return <p> Oooops 😵 sorry, there is no character in this universe that matches with your search! 🛸 </p>;
+
+            return <>
+                <Header />
+                <p> Oooops 😵 sorry, there is no character in this universe that matches with your search! 🛸 </p>
+                <img
+                    src="https://media.giphy.com/media/l3vR4MzqOUKFXBcoo/giphy.gif"
+                    alt="Not Found gif"
+                    className="notFound-container__img" />
+            </>
         }
     };
 

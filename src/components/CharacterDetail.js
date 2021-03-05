@@ -27,7 +27,7 @@ const CharacterDetail = (props) => {
                             <strong>Status:</strong>{" "}
                             <span className='card-detail__info2'>
                                 {" "}
-                                {props.character.status}
+                                {props.character.status}  <i className={`fas fa-circle ${props.character.status === 'Dead' ? 'dead' : props.character.status === 'Alive' ? 'alive' : 'ssss'}`} />
                             </span>
                         </li>
                         <li className='card-detail__info'>

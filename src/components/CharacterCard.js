@@ -3,8 +3,15 @@ import { Link } from "react-router-dom";
 import "../stylesheets/layout/Cards.scss";
 import PropTypes from "prop-types";
 
-const CharacterCard = (props) => {
 
+const CharacterCard = (props) => {
+    const checkSpecies = () => {
+        if (props.character.species === 'Human') {
+            return "🌎";
+        } else {
+            return "👽 ";
+        }
+    };
     return (
         <>
             <Link to={`/character/${props.character.id}`}>
@@ -17,6 +24,7 @@ const CharacterCard = (props) => {
                     />
                     <h2 className="card__name">{props.character.name}</h2>
                     <p className="card__species">{props.character.species}</p>
+                    <span className="card__species--icon">{checkSpecies()}</span>
 
                 </article>
             </Link>

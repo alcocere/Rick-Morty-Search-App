@@ -31,9 +31,9 @@
 		margin-bottom: 8px;
 		width: 290px;
 		height: 35px;
-		background-color: $color-secondary;
+		background-color: $opacityblue;
 		border: 3px solid $color-green;
-		border-radius: 3px;
+		border-radius: 15px;
 		font-size: 1rem;
 		padding: 0 10px;
 		color: $color-green;
@@ -65,10 +65,10 @@
 		height: 35px;
 		margin-bottom: 8px;
 		font-size: 1rem;
-		background-color: transparent;
+		background-color: $opacityblue;
 		color: $color-light;
 		border: 3px solid $color-green;
-		border-radius: 3px;
+		border-radius: 15px;
 		padding: 3px;
 		box-shadow: 1px 1px 1px $color-green;
 		cursor: pointer;
