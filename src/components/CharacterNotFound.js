@@ -1,6 +1,6 @@
 import React from "react";
 import "../stylesheets/layout/NotFound.scss";
-
+import PropTypes from "prop-types";
 
 const CharacterNotFound = (props) => {
 
@@ -18,3 +18,7 @@ const CharacterNotFound = (props) => {
 
 
 export default CharacterNotFound;
+
+CharacterNotFound.propTypes = {
+    nameFilter: PropTypes.string,
+};

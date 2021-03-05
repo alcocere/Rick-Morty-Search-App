@@ -5,6 +5,7 @@ import Filters from "./Filters";
 import Header from "./Header";
 import { Route, Switch } from 'react-router-dom';
 import CharacterDetail from './CharacterDetail.js';
+import PropTypes from 'prop-types';
 
 
 const App = () => {
@@ -90,3 +91,10 @@ const App = () => {
 };
 
 export default App;
+
+App.propTypes = {
+    characters: PropTypes.array,
+    nameFilter: PropTypes.string,
+    specieFilter: PropTypes.string,
+    handleFilter: PropTypes.func,
+}

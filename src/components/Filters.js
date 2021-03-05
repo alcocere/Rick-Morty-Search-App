@@ -2,6 +2,7 @@ import React from "react"
 import FilterByName from "./FilterByName";
 import FilterBySpecie from "./FilterBySpecie";
 import "../stylesheets/layout/Filters.scss";
+import PropTypes from 'prop-types';
 
 const Filters = (props) => {
     const handleSubmit = (event) => {
@@ -17,7 +18,6 @@ const Filters = (props) => {
             <form onSubmit={handleSubmit}>
                 <FilterByName
                     handleFilter={props.handleFilter}
-
                     nameFilter={props.nameFilter} />
                 <FilterBySpecie
                     handleFilter={props.handleFilter}
@@ -28,4 +28,10 @@ const Filters = (props) => {
     );
 };
 
-export default Filters;    
+export default Filters;
+
+Filters.propTypes = {
+    handleFilter: PropTypes.func,
+    nameFilter: PropTypes.string,
+    specieFilter: PropTypes.string,
+}

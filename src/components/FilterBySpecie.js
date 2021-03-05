@@ -10,7 +10,7 @@ const FilterBySpecie = props => {
     return (
         <>
             <fieldset className="form-section__container">
-                <label htmlFor="specie" className="form-section__label">Species</label>
+                <label htmlFor="specie" className="form-section__label"></label>
                 <select
                     id="specie"
                     name="specie"
@@ -18,6 +18,7 @@ const FilterBySpecie = props => {
                     className="form-section__select"
                     value={props.specieFilter}
                 >
+
                     <option value="All" className="form-section__option">All</option>
                     <option value="Human" className="form-section__option">Human</option>
                     <option value="Alien" className="form-section__option">Alien</option>

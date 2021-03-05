@@ -1,10 +1,11 @@
 @import "../core/variables.scss";
 
 .form-section {
-	width: 100%;
+	width: 90%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-top: 40px;
 
 	&__container {
 		border: none;
@@ -31,12 +32,12 @@
 		width: 290px;
 		height: 35px;
 		background-color: $color-secondary;
-		border: 2px solid $color-secondary;
+		border: 3px solid $color-green;
 		border-radius: 3px;
 		font-size: 1rem;
 		padding: 0 10px;
-		color: $color-light;
-		box-shadow: 2px 1px 2px $color-secondary;
+		color: $color-green;
+		// box-shadow: 2px 1px 2px $color-green;
 
 		@media all and (min-width: 768px) {
 			width: 450px;
@@ -50,6 +51,8 @@
 		&:focus {
 			outline: 1px solid $color-light;
 			border-radius: 22px;
+			background-color: $color-secondary;
+			color: $color-green;
 		}
 		&::placeholder {
 			color: $color-light;
@@ -64,10 +67,10 @@
 		font-size: 1rem;
 		background-color: transparent;
 		color: $color-light;
-		border: 2px solid $color-secondary;
+		border: 3px solid $color-green;
 		border-radius: 3px;
 		padding: 3px;
-		box-shadow: 1px 1px 1px $color-secondary;
+		box-shadow: 1px 1px 1px $color-green;
 		cursor: pointer;
 
 		@media all and (min-width: 768px) {
@@ -92,9 +95,9 @@
 }
 
 .resetbtn-icon {
-	color: $color-secondary;
+	color: $color-green;
 	font-size: 20px;
-	border: 2px solid $color-secondary;
+	border: 4px solid $color-secondary;
 	border-radius: 50%;
 	padding: 5px;
 	margin-top: 10px;
@@ -102,7 +105,7 @@
 		background-color: $color-secondary;
 		cursor: pointer;
 		transform: scale(1.1);
-		color: white;
+		color: $color-green;
 		transition: transform 0.5s linear;
 	}
 }

@@ -11,7 +11,7 @@ const FilterByName = props => {
 
     return (
         <fieldset className="form-section__container">
-            <label htmlFor="character" className="form-section__label">Name</label>
+            <label htmlFor="character" className="form-section__label"></label>
             <input type="text"
                 id="character"
                 name="character"

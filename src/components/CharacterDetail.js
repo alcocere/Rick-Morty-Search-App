@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../stylesheets/layout/CardDetail.scss";
+import PropTypes from "prop-types";
 
 const CharacterDetail = (props) => {
     console.log(props);
@@ -56,3 +57,11 @@ const CharacterDetail = (props) => {
 };
 
 export default CharacterDetail;
+CharacterDetail.propTypes = {
+    image: PropTypes.string,
+    name: PropTypes.string,
+    status: PropTypes.string,
+    species: PropTypes.string,
+    origin: PropTypes.string,
+    episode: PropTypes.number,
+};

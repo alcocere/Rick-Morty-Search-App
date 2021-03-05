@@ -1,6 +1,7 @@
 import React from "react"
 import CharacterCard from "./CharacterCard";
 import CharacterNotFound from "./CharacterNotFound";
+import PropTypes from "prop-types";
 
 const CharacterList = props => {
     const character = props.characters.map(character => {
@@ -26,3 +27,9 @@ const CharacterList = props => {
 
 
 export default CharacterList;
+
+CharacterList.propTypes = {
+    character: PropTypes.array,
+    id: PropTypes.number,
+    nameFilter: PropTypes.string,
+};

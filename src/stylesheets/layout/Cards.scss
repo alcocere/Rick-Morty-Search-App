@@ -23,6 +23,7 @@
 		background-color: $color-secondary;
 		cursor: pointer;
 		transform: scale(1.1);
+		color: $color-green;
 	}
 
 	&__image {
@@ -40,7 +41,7 @@
 
 	&__name {
 		font-size: 24px;
-		max-width: 150px;
+		max-width: 240px;
 		text-align: center;
 	}
 
@@ -69,24 +70,23 @@
 	height: 610px;
 	margin-top: 60px;
 	scroll-behavior: smooth;
-	background-color: rgb(0, 0, 0);
+	background-color: rgb(12, 12, 12);
 	border-radius: 20px;
 	padding: 15px;
-	// margin-bottom: 8px;
-	padding-right: 30px;
+	// box-shadow: 0 4px 90px -10px #69ff4b;
 	@media (min-width: 600px) {
 		overflow-y: scroll;
 		scroll-behavior: smooth;
 
 		&::-webkit-scrollbar {
 			padding-left: 5px;
-			width: 5px;
-			height: 2px;
+			width: 4px;
+			height: 1px;
 			background: $color-green;
 		}
 
 		&::-webkit-scrollbar-thumb {
-			background-color: $color-secondary;
+			background-color: $color-blackopacity;
 		}
 	}
 }
