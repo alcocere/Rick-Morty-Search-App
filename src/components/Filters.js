@@ -7,16 +7,22 @@ const Filters = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault();
     };
+
+    const handleReset = (props) => {
+        props.handleReset();
+    };
+
     return (
         <section className="form-section">
             <form onSubmit={handleSubmit}>
                 <FilterByName
                     handleFilter={props.handleFilter}
-                    handleReset={props.handleReset}
+
                     nameFilter={props.nameFilter} />
                 <FilterBySpecie
                     handleFilter={props.handleFilter}
-                    specieFilter={props.specieFilter} />
+                    specieFilter={props.specieFilter}
+                    handleReset={props.handleReset} />
             </form>
         </section>
     );

@@ -14,7 +14,6 @@
 		}
 
 		@media all and (min-width: 1200px) {
-			width: 250px;
 			display: inline-block;
 			max-width: 1200px;
 		}
@@ -23,8 +22,8 @@
 		display: inline-block;
 		color: $color-light;
 		margin-top: 20px;
-		margin-bottom: 5px;
 		font-size: 24px;
+		margin-right: 10px;
 	}
 	&__input {
 		display: block;
@@ -84,5 +83,26 @@
 		&:focus {
 			border: 2px solid $color-secondary;
 		}
+	}
+}
+
+.resetbtn-container {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.resetbtn-icon {
+	color: $color-secondary;
+	font-size: 20px;
+	border: 2px solid $color-secondary;
+	border-radius: 50%;
+	padding: 5px;
+	margin-top: 10px;
+	&:hover {
+		background-color: $color-secondary;
+		cursor: pointer;
+		transform: scale(1.1);
+		color: white;
+		transition: transform 0.5s linear;
 	}
 }

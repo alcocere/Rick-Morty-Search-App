@@ -8,9 +8,6 @@ const FilterByName = props => {
         });
     };
 
-    const handleReset = () => {
-        props.handleReset();
-    };
 
     return (
         <fieldset className="form-section__container">
@@ -23,7 +20,6 @@ const FilterByName = props => {
                 onChange={handleChange}
                 value={props.nameFilter}>
             </input>
-            <span className="reset-btn fas fa-sync-alt" onClick={handleReset}></span>
         </fieldset>
     );
 };
