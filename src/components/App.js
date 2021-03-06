@@ -6,19 +6,26 @@ import Header from "./Header";
 import { Route, Switch } from 'react-router-dom';
 import CharacterDetail from './CharacterDetail.js';
 import PropTypes from 'prop-types';
+import localStorage from './../services/localStorage';
 
 
 
 const App = () => {
     const [characters, setCharacters] = useState([]);
-    const [nameFilter, setNameFilter] = useState('');
+    const [nameFilter, setNameFilter] = useState(localStorage.get('nameFilter', ''));
     const [specieFilter, setSpecieFilter] = useState('All');
     const [statusFilter, setStatusFilter] = useState([]);
+
 
 
     useEffect(() => {
         getDataFromApi().then(data => setCharacters(data));
     }, []);
+
+
+    useEffect(() => {
+        localStorage.set('nameFilter', nameFilter);
+    }, [nameFilter]);
 
     //EVENT HANDLERS
     const handleFilter = data => {
@@ -41,12 +48,10 @@ const App = () => {
 
     //RESET
     const handleReset = () => {
-        console.log('cliclic');
         setCharacters(characters);
         setNameFilter('');
         setSpecieFilter('All');
-        setStatusFilter(['']);
-
+        setStatusFilter([]);
     }
 
     //FILTERS

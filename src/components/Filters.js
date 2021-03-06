@@ -19,7 +19,8 @@ const Filters = (props) => {
             <form onSubmit={handleSubmit}>
                 <FilterByName
                     handleFilter={props.handleFilter}
-                    nameFilter={props.nameFilter} />
+                    nameFilter={props.nameFilter}
+                    handleReset={props.handleReset} />
                 <FilterBySpecie
                     handleFilter={props.handleFilter}
                     specieFilter={props.specieFilter}
