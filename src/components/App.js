@@ -13,6 +13,7 @@ const App = () => {
     const [characters, setCharacters] = useState([]);
     const [nameFilter, setNameFilter] = useState('');
     const [specieFilter, setSpecieFilter] = useState('All');
+    const [statusFilter, setStatusFilter] = useState([]);
 
 
     useEffect(() => {
@@ -21,10 +22,20 @@ const App = () => {
 
     //EVENT HANDLERS
     const handleFilter = data => {
+        console.log(data);
         if (data.key === 'name') {
             setNameFilter(data.value);
         } else if (data.key === 'specie') {
             setSpecieFilter(data.value)
+        } else if (data.key === 'status') {
+            if (data.checked === true) {
+                const newStatusFilter = [...statusFilter];
+                newStatusFilter.push(data.value);
+                setStatusFilter(newStatusFilter);
+            } else {
+                const newStatusFilter = statusFilter.filter(character => character !== data.value);
+                setStatusFilter(newStatusFilter);
+            }
         }
     };
 
@@ -34,6 +45,7 @@ const App = () => {
         setCharacters(characters);
         setNameFilter('');
         setSpecieFilter('All');
+        setStatusFilter(['']);
 
     }
 
@@ -48,8 +60,22 @@ const App = () => {
             } else {
                 return character.species === specieFilter;
             }
+        })
+        .filter(character => {
+            if (statusFilter.length === 0) {
+                return true;
+            } else {
+                return statusFilter.includes(character.status);
+            }
         });
 
+
+    // const getStatus = () => {
+    //     return characters.map(character => character.status);
+    // }
+    const getStatus = (key) => {
+        return [...new Set(characters.map((character) => character[key]))];
+    }
 
 
     //RENDER CHARACTER DETAIL
@@ -87,8 +113,11 @@ const App = () => {
                         <main className="main">
                             <Filters handleFilter={handleFilter}
                                 handleReset={handleReset}
-                                nameFilter={nameFilter}
-                                specieFilter={specieFilter} />
+                                // nameFilter={nameFilter}
+                                // specieFilter={specieFilter}
+                                inputValue={nameFilter}
+                                species={getStatus('species')}
+                                status={getStatus('status')} />
                             <CharacterList characters={filteredCharacters} filterName={nameFilter} />
                         </main>
                     </Route>
