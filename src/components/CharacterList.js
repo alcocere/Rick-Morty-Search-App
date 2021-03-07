@@ -11,18 +11,15 @@ const CharacterList = props => {
             </li>
         );
     });
-    const notFound = () => {
-        if (character.length === 0) {
-            return <CharacterNotFound nameFilter={props.filterName} />
-        }
-    };
 
-    return (
-        <section className="cards-section">
-            <ul className="cards-container">{character}</ul>
-            {notFound()}
-        </section>
-    );
+    if (character.length === 0) {
+        return <CharacterNotFound nameFilter={props.filterName}></CharacterNotFound>
+    } else
+        return (
+            <section className="cards-section">
+                <ul className="cards-container">{character}</ul>
+            </section>
+        );
 };
 
 

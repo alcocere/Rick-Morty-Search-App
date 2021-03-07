@@ -10,10 +10,6 @@ const Filters = (props) => {
         event.preventDefault();
     };
 
-    const handleReset = (props) => {
-        props.handleReset();
-    };
-
     return (
         <section className="form-section">
             <form onSubmit={handleSubmit}>

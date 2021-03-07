@@ -9,7 +9,7 @@ const FilterByStatus = props => {
 
     const statusElement = props.status.map((status, index) => {
         return (
-            <label key={index} className="display-block">
+            <label key={index} className="checkbox-label">
                 <input type="checkbox" name="status" value={status} onChange={handleChange} />
                 {status}
             </label>
@@ -17,7 +17,7 @@ const FilterByStatus = props => {
     });
     return (
         <>
-            <label className="form__label display-block" htmlFor="status">
+            <label className="checkbox-text" htmlFor="status">
                 Status:
           </label>
             {statusElement}

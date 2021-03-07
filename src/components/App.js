@@ -5,27 +5,22 @@ import Filters from "./Filters";
 import Header from "./Header";
 import { Route, Switch } from 'react-router-dom';
 import CharacterDetail from './CharacterDetail.js';
+import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
-import localStorage from './../services/localStorage';
 
 
 
 const App = () => {
     const [characters, setCharacters] = useState([]);
-    const [nameFilter, setNameFilter] = useState(localStorage.get('nameFilter', ''));
+    const [nameFilter, setNameFilter] = useState('');
     const [specieFilter, setSpecieFilter] = useState('All');
     const [statusFilter, setStatusFilter] = useState([]);
-
 
 
     useEffect(() => {
         getDataFromApi().then(data => setCharacters(data));
     }, []);
 
-
-    useEffect(() => {
-        localStorage.set('nameFilter', nameFilter);
-    }, [nameFilter]);
 
     //EVENT HANDLERS
     const handleFilter = data => {
@@ -46,9 +41,9 @@ const App = () => {
         }
     };
 
+
     //RESET
     const handleReset = () => {
-        setCharacters(characters);
         setNameFilter('');
         setSpecieFilter('All');
         setStatusFilter([]);
@@ -85,26 +80,27 @@ const App = () => {
 
     //RENDER CHARACTER DETAIL
     const renderCharacterDetail = (props) => {
+        console.log(props);
         const foundCharacter = characters.find((character) => {
             return character.id === parseInt(props.match.params.id);
         });
         if (foundCharacter !== undefined) {
             return (
                 <>
-                    {/* <Header /> */}
                     <CharacterDetail character={foundCharacter} />
                 </>
-
             );
         } else {
-
             return <>
                 <Header />
-                <p> Oooops 😵 sorry, there is no character in this universe that matches with your search! 🛸 </p>
-                <img
-                    src="https://media.giphy.com/media/l3vR4MzqOUKFXBcoo/giphy.gif"
-                    alt="Not Found gif"
-                    className="notFound-container__img" />
+                <div className="notFound-container">
+                    <p className="notFound-container__text"> Oooops 😵 sorry, there is no character in this universe that matches with your search! 🛸 </p>
+                    <Link to="/" className="header__link"> Try again </Link>
+                    <img
+                        src="https://media.giphy.com/media/l3vR4MzqOUKFXBcoo/giphy.gif"
+                        alt="Not Found gif"
+                        className="notFound-container__img" />
+                </div>
             </>
         }
     };
@@ -118,10 +114,8 @@ const App = () => {
                         <main className="main">
                             <Filters handleFilter={handleFilter}
                                 handleReset={handleReset}
-                                // nameFilter={nameFilter}
-                                // specieFilter={specieFilter}
-                                inputValue={nameFilter}
-                                species={getStatus('species')}
+                                nameFilter={nameFilter}
+                                specieFilter={specieFilter}
                                 status={getStatus('status')} />
                             <CharacterList characters={filteredCharacters} filterName={nameFilter} />
                         </main>
