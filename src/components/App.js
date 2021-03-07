@@ -42,18 +42,9 @@ const App = () => {
                 const newStatusFilter = [...statusFilter];
                 newStatusFilter.splice(indexStatus, 1);
                 setStatusFilter(newStatusFilter);
-            } console.log(statusFilter);
-            // if (data.checked === true) {
-            //     const newStatusFilter = [...statusFilter];
-            //     newStatusFilter.push(data.value);
-            //     setStatusFilter(newStatusFilter);
-            // } else {
-            //     const newStatusFilter = statusFilter.filter(character => character !== data.value);
-            //     setStatusFilter(newStatusFilter);
-            // }
+            }
         }
     };
-
 
     //RESET
     const handleReset = () => {
@@ -82,14 +73,9 @@ const App = () => {
             }
         });
 
-
-    // const getStatus = () => {
-    //     return characters.map(character => character.status);
-    // }
     const getStatus = (key) => {
         return [...new Set(characters.map((character) => character[key]))];
     }
-
 
     //RENDER CHARACTER DETAIL
     const renderCharacterDetail = (props) => {
