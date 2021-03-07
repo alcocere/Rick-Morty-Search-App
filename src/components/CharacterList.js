@@ -12,7 +12,7 @@ const CharacterList = props => {
         );
     });
 
-    if (character.length === 0) {
+    if (!props.isLoading && character.length === 0) {
         return <CharacterNotFound nameFilter={props.filterName}></CharacterNotFound>
     } else
         return (

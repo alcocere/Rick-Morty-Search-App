@@ -30,14 +30,13 @@
 		width: 170px;
 		border-radius: 100%;
 		transform: translateY(-30px);
-		box-shadow: 0 8px 40px -20px #69ff4b;
+		box-shadow: 0 14px 39px -12px #000;
 
 		@media all and (min-width: 500px) {
 			height: auto;
 			width: 200px;
 			transform: translateY(-40px);
 			box-shadow: 0 14px 39px -12px #000;
-			// box-shadow: 0 8px 50px -40px #69ff4b;
 		}
 	}
 
@@ -72,7 +71,7 @@
 .cards-section {
 	overflow-y: scroll;
 	height: 610px;
-	margin-top: 60px;
+	margin-top: 20px;
 	scroll-behavior: smooth;
 	background-color: rgba(0, 0, 0, 0.81);
 	border-radius: 20px;

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
-import getDataFromApi from "../services/getDataFromApi.js.js";
+import getDataFromApi from "../services/getDataFromApi.js";
 import CharacterList from "./CharacterList";
+import CharacterDetail from "./CharacterDetail";
 import Filters from "./Filters";
 import Header from "./Header";
+import Footer from "./Footer";
+import Loader from "./Loader";
 import { Route, Switch } from 'react-router-dom';
-import CharacterDetail from './CharacterDetail.js';
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 
@@ -15,14 +17,16 @@ const App = () => {
     const [nameFilter, setNameFilter] = useState('');
     const [specieFilter, setSpecieFilter] = useState('All');
     const [statusFilter, setStatusFilter] = useState([]);
+    const [isLoading, setIsLoading] = useState(true);
 
 
     useEffect(() => {
-        getDataFromApi().then(data => setCharacters(data));
+        getDataFromApi().then(data => setCharacters(data))
+            .then(() => setIsLoading(false));
     }, []);
 
 
-    //EVENT HANDLERS
+    //HANDLE FILTERS
     const handleFilter = data => {
         console.log(data);
         if (data.key === 'name') {
@@ -30,14 +34,23 @@ const App = () => {
         } else if (data.key === 'specie') {
             setSpecieFilter(data.value)
         } else if (data.key === 'status') {
-            if (data.checked === true) {
-                const newStatusFilter = [...statusFilter];
-                newStatusFilter.push(data.value);
+            const indexStatus = statusFilter.indexOf(data.value);
+            if (indexStatus === -1) {
+                const newStatusFilter = [...statusFilter, data.value];
                 setStatusFilter(newStatusFilter);
             } else {
-                const newStatusFilter = statusFilter.filter(character => character !== data.value);
+                const newStatusFilter = [...statusFilter];
+                newStatusFilter.splice(indexStatus, 1);
                 setStatusFilter(newStatusFilter);
-            }
+            } console.log(statusFilter);
+            // if (data.checked === true) {
+            //     const newStatusFilter = [...statusFilter];
+            //     newStatusFilter.push(data.value);
+            //     setStatusFilter(newStatusFilter);
+            // } else {
+            //     const newStatusFilter = statusFilter.filter(character => character !== data.value);
+            //     setStatusFilter(newStatusFilter);
+            // }
         }
     };
 
@@ -80,14 +93,13 @@ const App = () => {
 
     //RENDER CHARACTER DETAIL
     const renderCharacterDetail = (props) => {
-        console.log(props);
         const foundCharacter = characters.find((character) => {
             return character.id === parseInt(props.match.params.id);
         });
         if (foundCharacter !== undefined) {
             return (
                 <>
-                    <CharacterDetail character={foundCharacter} />
+                    <CharacterDetail character={foundCharacter} isLoading={isLoading} />;
                 </>
             );
         } else {
@@ -117,8 +129,10 @@ const App = () => {
                                 nameFilter={nameFilter}
                                 specieFilter={specieFilter}
                                 status={getStatus('status')} />
-                            <CharacterList characters={filteredCharacters} filterName={nameFilter} />
+                            <CharacterList characters={filteredCharacters} filterName={nameFilter} isLoading={isLoading} />
+                            {isLoading ? <Loader /> : ''}
                         </main>
+                        <Footer />
                     </Route>
                     <Route path="/character/:id" render={renderCharacterDetail} />
                 </Switch>

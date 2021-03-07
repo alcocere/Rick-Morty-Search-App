@@ -9,19 +9,27 @@ const FilterByStatus = props => {
 
     const statusElement = props.status.map((status, index) => {
         return (
-            <label key={index} className="checkbox-label">
-                <input type="checkbox" name="status" value={status} onChange={handleChange} />
+            <label key={index} className="status-checkbox">
+                <input
+                    type="checkbox"
+                    name="status"
+                    value={status}
+                    onChange={handleChange}
+                    className="status-checkbox__input"
+                />
                 {status}
             </label>
         );
     });
     return (
-        <>
-            <label className="checkbox-text" htmlFor="status">
+
+        <div className="status-checkbox__container">
+            <label className="status-checkbox__label" htmlFor="status">
                 Status:
           </label>
             {statusElement}
-        </>
+        </div>
+
     );
 };
 

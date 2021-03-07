@@ -8,48 +8,41 @@
 
 	&__container {
 		border: none;
-
 		@media all and (min-width: 768px) {
 			padding-bottom: 10px;
 		}
-
-		@media all and (min-width: 1200px) {
-			display: inline-block;
-			max-width: 1200px;
-		}
+		// @media all and (min-width: 1200px) {
+		// 	// display: inline-block;
+		// 	max-width: 1200px;
+		// }
 	}
 	&__label {
 		display: inline-block;
 		color: $color-light;
-		margin-top: 20px;
 		font-size: 24px;
-		margin-right: 10px;
 	}
 	&__input {
-		display: block;
-		margin-bottom: 8px;
-		width: 290px;
+		font-family: $font-main;
+		width: 280px;
 		height: 35px;
 		background-color: $blackopacity;
 		border: 3px solid $color-secondary;
 		border-radius: 15px;
-		font-size: 1rem;
-		padding: 0 10px;
+		font-size: 1.3rem;
+		padding: 13px 10px 10px;
 		color: $color-green;
-		// box-shadow: 2px 1px 2px $color-green;
+		margin-right: 5px;
 
 		@media all and (min-width: 768px) {
 			width: 450px;
 		}
 
 		@media all and (min-width: 1200px) {
-			width: 350px;
+			width: 450px;
 			display: inline-block;
-			margin-right: 25px;
 		}
 		&:focus {
 			outline: 0 none;
-			// outline: 1px solid $color-light;
 			border-radius: 22px;
 			background-color: $color-secondary;
 			color: $color-green;
@@ -60,51 +53,58 @@
 	}
 
 	&__select {
-		width: 290px;
+		font-family: $font-main;
+		width: 280px;
 		display: block;
 		height: 35px;
-		margin-bottom: 8px;
-		font-size: 1rem;
+		font-size: 1.2rem;
 		background-color: $blackopacity;
 		color: $color-light;
 		border: 3px solid $color-secondary;
 		border-radius: 15px;
 		padding: 3px;
 		cursor: pointer;
-
 		@media all and (min-width: 768px) {
-			width: 450px;
-		}
-
-		@media all and (min-width: 1200px) {
-			width: 350px;
-			display: inline-block;
-			margin-right: 15px;
+			width: 445px;
 		}
 
 		&:focus {
 			border: 2px solid $color-secondary;
+			outline: 0 none;
+			font-family: $font-main;
 		}
 	}
 }
-
-.resetbtn-container {
-	display: flex;
-	justify-content: flex-end;
-}
-
 .resetbtn-icon {
 	color: $color-green;
-	font-size: 16px;
-	border: 4px solid $color-secondary;
-	border-radius: 50%;
+	font-size: 12px;
+	border: 3px solid $color-secondary;
+	border-radius: 60%;
 	padding: 5px;
 	margin-top: 10px;
 	&:hover {
 		background-color: $color-secondary;
 		cursor: pointer;
-		transform: scale(1.1);
 		color: $color-green;
-		transition: transform 0.5s linear;
 	}
+}
+
+.status-checkbox {
+	display: inline-block;
+	font-size: 20px;
+	padding: 1px 5px 1px;
+	background-color: black;
+	border-radius: 10px;
+	margin: 2px;
+
+	&__label {
+		display: inline-block;
+		font-size: 22px;
+		padding-right: 15px;
+	}
+}
+
+.status-checkbox__container {
+	margin-top: 10px;
+	width: 320px;
 }

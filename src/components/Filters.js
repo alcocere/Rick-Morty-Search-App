@@ -23,8 +23,7 @@ const Filters = (props) => {
                     handleReset={props.handleReset} />
                 <FilterByStatus
                     handleFilter={props.handleFilter}
-                    status={props.status}
-                    handleReset={props.handleReset} />
+                    status={props.status} handleReset={props.handleReset} />
             </form>
         </section>
     );

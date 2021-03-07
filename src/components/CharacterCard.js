@@ -7,11 +7,12 @@ import PropTypes from "prop-types";
 const CharacterCard = (props) => {
     const checkSpecies = () => {
         if (props.character.species === 'Human') {
-            return "🌎";
+            return "🌍";
         } else {
-            return "👽 ";
+            return "🪐 ";
         }
     };
+
     return (
         <>
             <Link to={`/character/${props.character.id}`}>

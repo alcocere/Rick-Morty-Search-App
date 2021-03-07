@@ -1,0 +1,27 @@
+.footer {
+	height: 60px;
+	color: black;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	align-content: center;
+	background-color: rgb(0, 0, 0);
+	color: #62a4ab;
+	align-items: center;
+	font-size: 12px;
+}
+.footer__small--first {
+	width: 70px;
+}
+.footer__icon {
+	height: 50px;
+}
+
+@media all and (min-width: 768px) {
+	.footer {
+		font-size: 20px;
+	}
+	.footer__small--first {
+		width: auto;
+	}
+}
