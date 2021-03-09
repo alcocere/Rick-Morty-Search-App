@@ -2,6 +2,7 @@ import React from "react"
 import FilterByName from "./FilterByName";
 import FilterBySpecie from "./FilterBySpecie";
 import FilterByStatus from "./FilterByStatus";
+import FilterByEpisodes from "./FilterByEpisodes";
 import "../stylesheets/layout/Filters.scss";
 import PropTypes from 'prop-types';
 
@@ -24,6 +25,9 @@ const Filters = (props) => {
                 <FilterByStatus
                     handleFilter={props.handleFilter}
                     status={props.status} handleReset={props.handleReset} />
+                <FilterByEpisodes
+                    handleFilter={props.handleFilter}
+                    episodesFilter={props.episodesFilter} />
             </form>
         </section>
     );

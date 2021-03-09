@@ -14,10 +14,12 @@ import PropTypes from 'prop-types';
 
 const App = () => {
     const [characters, setCharacters] = useState([]);
+    console.log(characters);
     const [nameFilter, setNameFilter] = useState('');
     const [specieFilter, setSpecieFilter] = useState('All');
     const [statusFilter, setStatusFilter] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [episodesFilter, setEpisodesFilter] = useState(0);
 
 
     useEffect(() => {
@@ -33,6 +35,8 @@ const App = () => {
             setNameFilter(data.value);
         } else if (data.key === 'specie') {
             setSpecieFilter(data.value)
+        } else if (data.key === 'episodes') {
+            setEpisodesFilter(data.value);
         } else if (data.key === 'status') {
             const indexStatus = statusFilter.indexOf(data.value);
             if (indexStatus === -1) {
@@ -71,7 +75,15 @@ const App = () => {
             } else {
                 return statusFilter.includes(character.status);
             }
-        });
+        })
+        .filter(character => {
+            if (episodesFilter === 0 || episodesFilter === '') {
+                return true;
+            } else {
+                return character.episodes.length === parseInt(episodesFilter);
+            }
+        })
+
 
     const getStatus = (key) => {
         return [...new Set(characters.map((character) => character[key]))];
@@ -113,6 +125,7 @@ const App = () => {
                             <Filters handleFilter={handleFilter}
                                 handleReset={handleReset}
                                 nameFilter={nameFilter}
+                                episodesFilter={episodesFilter}
                                 specieFilter={specieFilter}
                                 status={getStatus('status')} />
                             <CharacterList characters={filteredCharacters} filterName={nameFilter} isLoading={isLoading} />

@@ -26,7 +26,7 @@ const FilterByStatus = props => {
         <div className="status-checkbox__container">
             <label className="status-checkbox__label" htmlFor="status">
                 Status:
-          </label>
+            </label>
             {statusElement}
         </div>
 
