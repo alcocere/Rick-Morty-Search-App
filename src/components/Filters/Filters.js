@@ -2,7 +2,7 @@ import React from "react"
 import FilterByName from "./FilterByName";
 import FilterBySpecie from "./FilterBySpecie";
 import FilterByStatus from "./FilterByStatus";
-import "../stylesheets/layout/Filters.scss";
+import "../../stylesheets/layout/Filters.scss";
 import PropTypes from 'prop-types';
 
 const Filters = (props) => {
@@ -23,7 +23,9 @@ const Filters = (props) => {
                     handleReset={props.handleReset} />
                 <FilterByStatus
                     handleFilter={props.handleFilter}
-                    status={props.status} handleReset={props.handleReset} />
+                    status={props.status}
+                    statusFilter={props.statusFilter}
+                    handleReset={props.handleReset} />
             </form>
         </section>
     );

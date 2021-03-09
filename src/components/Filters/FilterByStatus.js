@@ -9,16 +9,18 @@ const FilterByStatus = props => {
 
     const statusElement = props.status.map((status, index) => {
         return (
-            <label key={index} className="status-checkbox">
+            < label key={index} className="status-checkbox" >
+
                 <input
                     type="checkbox"
                     name="status"
                     value={status}
                     onChange={handleChange}
                     className="status-checkbox__input"
+                    checked={props.statusFilter.includes(status)}
                 />
                 {status}
-            </label>
+            </label >
         );
     });
     return (

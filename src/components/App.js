@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
+import { Route, Switch } from 'react-router-dom';
 import getDataFromApi from "../services/getDataFromApi.js";
-import CharacterList from "./CharacterList";
-import CharacterDetail from "./CharacterDetail";
-import Filters from "./Filters";
+import CharacterList from "./Characters/CharacterList";
+import CharacterDetail from "../components/./Characters/CharacterDetail";
+import CharacterNoResults from './Characters/CharacterNoResults.js';
+import Filters from "./Filters/Filters";
 import Header from "./Header";
 import Footer from "./Footer";
 import Loader from "./Loader";
-import { Route, Switch } from 'react-router-dom';
-import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
-
 
 
 const App = () => {
@@ -91,14 +90,7 @@ const App = () => {
         } else {
             return <>
                 <Header />
-                <div className="notFound-container">
-                    <p className="notFound-container__text"> Oooops 😵 sorry, there is no character in this universe that matches with your search! 🛸 </p>
-                    <Link to="/" className="header__link"> Try again </Link>
-                    <img
-                        src="https://media.giphy.com/media/l3vR4MzqOUKFXBcoo/giphy.gif"
-                        alt="Not Found gif"
-                        className="notFound-container__img" />
-                </div>
+                <CharacterNoResults />
             </>
         }
     };
@@ -114,6 +106,7 @@ const App = () => {
                                 handleReset={handleReset}
                                 nameFilter={nameFilter}
                                 specieFilter={specieFilter}
+                                statusFilter={statusFilter}
                                 status={getStatus('status')} />
                             <CharacterList characters={filteredCharacters} filterName={nameFilter} isLoading={isLoading} />
                             {isLoading ? <Loader /> : ''}

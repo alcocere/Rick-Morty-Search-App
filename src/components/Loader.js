@@ -1,4 +1,3 @@
-import "../stylesheets/layout/Loader.scss";
 
 const Loader = () => {
     return (

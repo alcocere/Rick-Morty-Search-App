@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../stylesheets/layout/CardDetail.scss";
+import "../../stylesheets/layout/CardDetail.scss";
 import PropTypes from "prop-types";
-import Loader from "./Loader";
+import Loader from "../Loader";
 
 const CharacterDetail = (props) => {
     if (props.isLoading && props.character === undefined) {
@@ -31,13 +31,13 @@ const CharacterDetail = (props) => {
                             <strong>Status:</strong>{" "}
                             <span className='card-detail__info2'>
                                 {" "}
-                                {props.character.status}  <i className={`fas fa-circle ${props.character.status === 'Dead' ? 'dead' : props.character.status === 'Alive' ? 'alive' : 'ssss'}`} />
+                                {props.character.status}  <i className={`fas fa-circle ${props.character.status === 'Dead' ? 'dead' : props.character.status === 'Alive' ? 'alive' : ''}`} />
                             </span>
                         </li>
                         <li className='card-detail__info'>
                             <strong>Species:</strong>{" "}
                             <span className='card-detail__info2'>
-                                {props.character.species}{" "} <i className={`<i class="fas fa-universal-access"></i> ${props.character.species === 'Human' ? 'Human' : props.character.status === 'Alien' ? 'alien' : 'ssss'}`} />
+                                {props.character.species}{" "} {props.character.species === 'Human' ? '' : props.character.species === 'Alien' ? '' : ''}
                             </span>
                         </li>
                         <li className='card-detail__info'>
