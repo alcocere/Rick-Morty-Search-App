@@ -9,30 +9,31 @@ const FilterByStatus = props => {
 
     const statusElement = props.status.map((status, index) => {
         return (
-            < label key={index} className="status-checkbox" >
-
-                <input
-                    type="checkbox"
-                    name="status"
-                    value={status}
-                    onChange={handleChange}
-                    className="status-checkbox__input"
-                    checked={props.statusFilter.includes(status)}
-                />
-                {status}
-            </label >
+            <>
+                < label key={index} className="status-checkbox" >
+                    <input
+                        type="checkbox"
+                        name="status"
+                        value={status}
+                        onChange={handleChange}
+                        className="status-checkbox__input hide"
+                        checked={props.statusFilter.includes(status)}
+                    />
+                    {status}
+                </label >
+            </>
         );
     });
     return (
-
-        <div className="status-checkbox__container">
-            <label className="status-checkbox__label" htmlFor="status">
-                Status:
-          </label>
-            {statusElement}
-        </div>
-
+        <>
+            <div className="status-checkbox__container">
+                <label className="status-checkbox__label" htmlFor="status">
+                    Status:
+                 </label>
+                {statusElement}
+            </div>
+        </>
     );
 };
 
-export default FilterByStatus;    
+export default FilterByStatus;

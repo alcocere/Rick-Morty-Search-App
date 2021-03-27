@@ -47,21 +47,13 @@
 			color: $color-green;
 		}
 	}
-}
-
-.modal__close {
-	color: $color-green;
-	border: solid 1px $color-green;
-	border-radius: 50%;
-	padding: 8px;
-	margin-bottom: 10px;
-	&-text {
+	&__modalClose {
 		color: $color-green;
-		font-size: 17px;
+		font-size: 30px;
+		margin-bottom: 10px;
 	}
-}
-
-.main-detail {
-	height: 90vh;
-	margin-bottom: 40px;
+	&__modalText {
+		color: $color-green;
+		font-size: 20px;
+	}
 }

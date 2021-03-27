@@ -14,9 +14,11 @@ import PropTypes from 'prop-types';
 const App = () => {
     const [characters, setCharacters] = useState([]);
     const [nameFilter, setNameFilter] = useState('');
+    const [genderFilter, setGenderFilter] = useState('All');
     const [specieFilter, setSpecieFilter] = useState('All');
     const [statusFilter, setStatusFilter] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const [sortByName, setSortByName] = useState(false);
 
 
     useEffect(() => {
@@ -30,8 +32,12 @@ const App = () => {
         console.log(data);
         if (data.key === 'name') {
             setNameFilter(data.value);
+        } else if (data.key === 'gender') {
+            setGenderFilter(data.value);
         } else if (data.key === 'specie') {
             setSpecieFilter(data.value)
+        } else if (data.key === 'sortByName') {
+            setSortByName(data.checked);
         } else if (data.key === 'status') {
             const indexStatus = statusFilter.indexOf(data.value);
             if (indexStatus === -1) {
@@ -48,14 +54,23 @@ const App = () => {
     //RESET
     const handleReset = () => {
         setNameFilter('');
+        setGenderFilter('All');
         setSpecieFilter('All');
         setStatusFilter([]);
+        setSortByName(false);
     }
 
     //FILTERS
     const filteredCharacters = characters
         .filter(character => {
             return character.name.toUpperCase().includes(nameFilter.toUpperCase());
+        })
+        .filter(character => {
+            if (genderFilter === 'All') {
+                return true;
+            } else {
+                return character.gender === genderFilter;
+            }
         })
         .filter(character => {
             if (specieFilter === 'All') {
@@ -71,6 +86,17 @@ const App = () => {
                 return statusFilter.includes(character.status);
             }
         });
+    if (sortByName) {
+        filteredCharacters.sort((a, b) => {
+            if (a.name > b.name) {
+                return 1;
+            }
+            if (a.name < b.name) {
+                return -1;
+            }
+            return filteredCharacters;
+        });
+    };
 
     const getStatus = (key) => {
         return [...new Set(characters.map((character) => character[key]))];
@@ -105,8 +131,10 @@ const App = () => {
                             <Filters handleFilter={handleFilter}
                                 handleReset={handleReset}
                                 nameFilter={nameFilter}
+                                genderFilter={genderFilter}
                                 specieFilter={specieFilter}
                                 statusFilter={statusFilter}
+                                sortByName={sortByName}
                                 status={getStatus('status')} />
                             <CharacterList characters={filteredCharacters} filterName={nameFilter} isLoading={isLoading} />
                             {isLoading ? <Loader /> : ''}

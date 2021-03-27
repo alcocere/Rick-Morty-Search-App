@@ -8,6 +8,7 @@ const getDataFromApi = (page) => {
                 return {
                     id: character.id,
                     name: character.name,
+                    gender: character.gender,
                     species: character.species,
                     image: character.image,
                     status: character.status,

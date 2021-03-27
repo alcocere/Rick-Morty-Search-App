@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../../stylesheets/layout/CardDetail.scss";
 import PropTypes from "prop-types";
 import Loader from "../Loader";
+import Footer from "../Footer";
 
 const CharacterDetail = (props) => {
     if (props.isLoading && props.character === undefined) {
@@ -11,11 +12,11 @@ const CharacterDetail = (props) => {
     console.log(props);
     return (
         <>
-            <main className="main-detail">
+            <main>
                 <article className='card-detail'>
-                    <Link to='/' title='Back to List' className='modal__close-text'>
+                    <Link to='/' title='Back to List' className='card-detail__modalText'>
                         {" "}
-					Back to List <span className='modal__close icon fas fa-times'></span>
+					Back to List <span className='card-detail__modalClose icon fas fa-times'></span>
                     </Link>
                     <div>
                         <img
@@ -56,6 +57,7 @@ const CharacterDetail = (props) => {
                     </ul>
                 </article>
             </main>
+            <Footer />
         </>
     );
 };

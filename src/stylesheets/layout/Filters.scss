@@ -1,44 +1,61 @@
 @import "../core/variables.scss";
 
 .form-section {
-	width: 90%;
+	width: 80%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	background-color: rgba(0, 0, 0, 0.735);
+	margin-top: 30px;
+	padding-bottom: 50px;
 
-	&__container {
+	&__filters {
 		border: none;
+		padding-top: 10px;
 		@media all and (min-width: 768px) {
+			display: inline-block;
 			padding-bottom: 10px;
+			max-width: 1200px;
+			padding-right: 10px;
 		}
-		// @media all and (min-width: 1200px) {
-		// 	// display: inline-block;
-		// 	max-width: 1200px;
-		// }
+	}
+	&__container {
+		@media all and (min-width: 768px) {
+			display: grid;
+			grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr;
+			justify-items: center;
+			grid-gap: 20px;
+			margin-left: 20px;
+		}
+		@media all and (min-width: 1200px) {
+			grid-template-columns: 0.1fr 0.1fr 0.1fr 0.1fr 0.1fr;
+			justify-items: center;
+			grid-gap: 20px;
+		}
 	}
 	&__label {
-		display: inline-block;
+		display: flex;
 		color: $color-light;
 		font-size: 24px;
 	}
 	&__input {
 		font-family: $font-main;
 		width: 280px;
-		height: 35px;
+		height: 45px;
 		background-color: $blackopacity;
 		border: 3px solid $color-secondary;
-		border-radius: 15px;
+		border-radius: 35px;
 		font-size: 1.3rem;
 		padding: 13px 10px 10px;
 		color: $color-green;
 		margin-right: 5px;
 
 		@media all and (min-width: 768px) {
-			width: 450px;
+			width: 300px;
 		}
 
 		@media all and (min-width: 1200px) {
-			width: 450px;
+			width: 300px;
 			display: inline-block;
 		}
 		&:focus {
@@ -56,16 +73,16 @@
 		font-family: $font-main;
 		width: 280px;
 		display: block;
-		height: 35px;
+		height: 45px;
 		font-size: 1.2rem;
 		background-color: $blackopacity;
 		color: $color-light;
 		border: 3px solid $color-secondary;
-		border-radius: 15px;
-		padding: 3px;
+		border-radius: 35px;
+		padding: 6px 15px 0;
 		cursor: pointer;
 		@media all and (min-width: 768px) {
-			width: 445px;
+			width: 130px;
 		}
 
 		&:focus {
@@ -75,37 +92,71 @@
 		}
 	}
 }
-.resetbtn-icon {
-	color: $color-green;
-	font-size: 12px;
-	border: 3px solid $color-secondary;
-	border-radius: 60%;
-	padding: 5px;
+.sortByName {
+	@media all and (min-width: 768px) {
+		width: 140px;
+	}
+	&__filter {
+		display: inline-block;
+		border-radius: 10px;
+		text-transform: capitalize;
+		font-size: 24px;
+		padding-right: 5px;
+	}
+}
+.resetbtn {
+	color: white;
+	font-size: 20px;
+	border: 2px solid $color-secondary;
+	border-radius: 10px;
+	padding: 0 7px 0 5px;
+	background-color: $color-secondary;
+	height: 35px;
 	margin-top: 10px;
+	font-family: $font-main;
+	@media all and (min-width: 768px) {
+		width: fit-content;
+		grid-area: 2 / 3 / 3 / 4;
+	}
 	&:hover {
 		background-color: $color-secondary;
 		cursor: pointer;
-		color: $color-green;
+		transform: scale(1.1);
 	}
+	&:focus {
+		outline: 0 none;
+	}
+}
+.fa,
+.fas {
+	padding: 5px 0 5px 5px;
 }
 
 .status-checkbox {
-	display: inline-block;
-	font-size: 20px;
-	padding: 1px 5px 1px;
-	background-color: black;
 	border-radius: 10px;
-	margin: 2px;
 	text-transform: capitalize;
+	padding-right: 5px;
 
 	&__label {
-		display: inline-block;
-		font-size: 22px;
-		padding-right: 15px;
+		display: flex;
+		font-size: 24px;
+		padding-right: 5px;
 	}
-}
-
-.status-checkbox__container {
-	margin-top: 10px;
-	width: 320px;
+	&__container {
+		margin-top: 10px;
+		width: 240px;
+		border-radius: 5px;
+		font-size: 18px;
+		display: flex;
+		flex-direction: column;
+		flex-wrap: wrap;
+		@media all and (min-width: 768px) {
+			font-size: 20px;
+			width: 110px;
+		}
+	}
+	&__input {
+		margin-right: 5px;
+		margin-left: 5px;
+	}
 }
