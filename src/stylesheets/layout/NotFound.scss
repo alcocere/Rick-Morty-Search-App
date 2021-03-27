@@ -16,7 +16,7 @@
 			font-size: 30px;
 		}
 		&--search {
-			color: $color-secondary;
+			color: $color-green;
 			font-size: 27px;
 			@media all and (min-width: 600px) {
 				font-size: 30px;
@@ -34,6 +34,7 @@
 		width: 200px;
 		border: 5px solid $color-green;
 		border-radius: 50%;
+		margin-bottom: 90px;
 		@media all and (min-width: 680px) {
 			width: 300px;
 		}
