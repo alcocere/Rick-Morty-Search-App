@@ -116,7 +116,7 @@
 	font-family: $font-main;
 	@media all and (min-width: 768px) {
 		width: fit-content;
-		grid-area: 2 / 3 / 3 / 4;
+		grid-area: 2 / 2 / 3 / 4;
 	}
 	&:hover {
 		background-color: $color-secondary;
