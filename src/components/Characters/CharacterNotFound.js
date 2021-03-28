@@ -1,12 +1,13 @@
 import React from "react";
-import "../stylesheets/layout/NotFound.scss";
+import "../../stylesheets/layout/NotFound.scss";
 import PropTypes from "prop-types";
 
-const CharacterNotFound = (props) => {
 
+
+const CharacterNotFound = (props) => {
     return (
         <div className="notFound-container">
-            <p className="notFound-container__text"> Sorry, there is no character that matches the name</p>
+            <p className="notFound-container__text"> Sorry, there is no character that matches the search</p>
             <span className="notFound-container__text--search">
                 {props.nameFilter}
             </span>

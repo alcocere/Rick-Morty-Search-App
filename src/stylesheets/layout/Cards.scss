@@ -59,28 +59,26 @@
 	grid-template-columns: 1fr;
 	margin-top: 90px;
 
-	@media (min-width: 500px) {
-		grid-template-columns: repeat(auto-fill, 250px);
+	@media (min-width: 768px) {
+		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 20px;
 	}
-	@media all and (min-width: 900px) {
-		max-width: 800px;
+	@media all and (min-width: 1024px) {
+		grid-template-columns: repeat(4, 1fr);
 	}
 }
 
 .cards-section {
 	overflow-y: scroll;
 	height: 610px;
-	margin-top: 20px;
 	scroll-behavior: smooth;
 	background-color: rgba(0, 0, 0, 0.81);
 	border-radius: 20px;
 	padding: 30px 60px 30px;
-	// box-shadow: 0 4px 90px -10px #69ff4b;
 	@media (min-width: 600px) {
 		overflow-y: scroll;
 		scroll-behavior: smooth;
-		padding: 30px 100px 30px;
+		padding: 30px 10px 30px;
 
 		&::-webkit-scrollbar {
 			padding-left: 5px;

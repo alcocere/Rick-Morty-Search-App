@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "react-router-dom";
-import "../stylesheets/layout/Cards.scss";
+import "../../stylesheets/layout/Cards.scss";
 import PropTypes from "prop-types";
 
 

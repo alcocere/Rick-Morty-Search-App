@@ -9,8 +9,8 @@ const FilterByName = props => {
     };
 
     return (
-        <div className="form-section__container">
-            <label htmlFor="character" className="form-section__label"></label>
+        <div className="form-section__filters">
+            <label htmlFor="character" className="form-section__label"> Name </label>
             <input type="text"
                 id="character"
                 name="character"
@@ -18,7 +18,7 @@ const FilterByName = props => {
                 className="form-section__input"
                 onChange={handleChange}
                 value={props.nameFilter} />
-            <span className="resetbtn-icon fas fa-times" onClick={props.handleReset}></span>
+
         </div>
     );
 };
