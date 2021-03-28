@@ -1,8 +1,9 @@
 # Rick & Morty Search App
 
-![Rick Morty Search App](https://user-images.githubusercontent.com/75808414/110252135-37973880-7f84-11eb-8e45-e71794497fb3.png)
+![Rick Morty Search App](https://user-images.githubusercontent.com/75808414/112738594-79544700-8f64-11eb-8923-595a8d0cbbac.png)
 
-### ¡Wubba Lubba Dub Dub!
+### ¡Wubba Lubba Dub Dub!!
+
 
 Welcome to the Rick & Morthy Search App. This responsive search app will allow you to find info about some of your favorite characters from the Rick & Morty show. It was developed under the Adalab Bootcamp Module 3 on \*\*React
 
